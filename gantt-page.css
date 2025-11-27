@@ -1,0 +1,49 @@
+/* Container for the dedicated Gantt page */
+.gantt-page {
+  min-height: calc(100vh - 4rem);
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Simple spacing for controls */
+.gantt-controls {
+  margin-bottom: 1rem;
+}
+
+.gantt-filters label {
+  margin-right: 1rem;
+}
+
+/* Make the timeline region take up the viewport height and scroll internally
+   so it does not push through the footer even with many tasks. */
+.gantt-page .gantt-timeline-wrapper {
+  /* Roughly: viewport minus header + filter controls; tweak 8rem as needed */
+  height: calc(100vh - 10rem);
+  max-height: calc(100vh - 10rem);
+  overflow: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* Ensure vis timeline fills its wrapper */
+.gantt-page #timeline {
+  height: 100%;
+}
+
+/* Relax Material's typical content max-width on this page
+   to make the chart feel as wide as possible. */
+.gantt-page .md-content,
+.gantt-page .md-content__inner {
+  max-width: 100%;
+}
+
+
+
+.vis-item.production-deadline {
+  background: transparent !important;
+  border: none !important;
+  color: #ef4444 !important;     /* red dot */
+  font-size: 32px !important;    /* bigger dot */
+  line-height: 32px !important;  /* keeps it nicely circular */
+}
